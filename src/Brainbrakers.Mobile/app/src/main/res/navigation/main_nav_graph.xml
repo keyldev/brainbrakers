@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="accessToken"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_homeFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myLibraryFragment"
+            app:destination="@id/myLibraryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createdPodcastsFragment"
+            app:destination="@id/createdPodcastsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.DiscoverFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_discoverFragment_to_aboutPodcastFragment"
+            app:destination="@id/aboutPodcastFragment" />
+        <action
+            android:id="@+id/action_discoverFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/aboutPodcastFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.AboutPodcastFragment"
+        android:label="fragment_about_podcast"
+        tools:layout="@layout/fragment_about_podcast" >
+        <action
+            android:id="@+id/action_aboutPodcastFragment_to_aboutEpisodeFragment"
+            app:destination="@id/aboutEpisodeFragment" />
+        <argument
+            android:name="accessToken"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutEpisodeFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.AboutEpisodeFragment"
+        android:label="fragment_about_episode"
+        tools:layout="@layout/fragment_about_episode" />
+    <fragment
+        android:id="@+id/myLibraryFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.MyLibraryFragment"
+        android:label="fragment_my_library"
+        tools:layout="@layout/fragment_my_library" />
+    <fragment
+        android:id="@+id/addPodcastFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.AddPodcastFragment"
+        android:label="fragment_add_podcast"
+        tools:layout="@layout/fragment_add_podcast" >
+        <action
+            android:id="@+id/action_addPodcastFragment_to_addEpisodeFragment"
+            app:destination="@id/addEpisodeFragment" />
+        <argument
+            android:name="accessToken"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEpisodeFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.AddEpisodeFragment"
+        android:label="fragment_add_episode"
+        tools:layout="@layout/fragment_add_episode" >
+        <argument
+            android:name="accessToken"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createdPodcastsFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.CreatedPodcastsFragment"
+        android:label="fragment_created_podcasts"
+        tools:layout="@layout/fragment_created_podcasts" >
+        <action
+            android:id="@+id/action_createdPodcastsFragment_to_addPodcastFragment"
+            app:destination="@id/addPodcastFragment" />
+        <action
+            android:id="@+id/action_createdPodcastsFragment_to_podcastStatsFragment"
+            app:destination="@id/podcastStatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/podcastStatsFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.PodcastStatsFragment"
+        android:label="fragment_podcast_stats"
+        tools:layout="@layout/fragment_podcast_stats" >
+        <argument
+            android:name="podcastId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.keyldev.brakerspodcast.Navigation.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <argument
+            android:name="accessToken"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">brakerspodcast</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="add">Добавить</string>
+    <string name="loading">Загрузка</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="b_nav_home">Главная</string>
+    <string name="b_nav_discover">Поиск</string>
+    <string name="b_nav_add">Добавить</string>
+    <string name="b_nav_library">Библиотека</string>
+    <string name="b_nav_account">Аккаунт</string>
+    <!--    login fragment-->
+    <string name="login_title_hint">Войдите в аккаунт</string>
+    <string name="login_username_hint">Логин</string>
+    <string name="login_password_hint">Пароль</string>
+    <string name="login_remember_hint">Автовход?</string>
+    <string name="login_button_hint">Войти</string>
+    <string name="login_continue_with_hint">или используйте</string>
+    <string name="login_no_account">Нет аккаунта?</string>
+    <string name="login_no_account_gotoreg">Регистрация</string>
+    <!-- register fragment-->
+    <string name="reg_title_hint">Регистрация</string>
+    <string name="reg_email_hint">Введите Email</string>
+    <string name="reg_username_hint">Введите логин</string>
+    <string name="reg_password_hint">Введите пароль</string>
+    <string name="reg_onemore_pass_hint">Повторите ваш пароль</string>
+    <string name="reg_have_acc_hint">Уже зарегистрированы?</string>
+
+    <!--    home fragment titles-->
+    <string name="home_sub_title_text">Подписки</string>
+    <string name="home_upd_title_text">Новые выпуски</string>
+    <!--    discover fragment title-->
+    <string name="discover_search_hint">Поиск</string>
+    <string name="discover_trending_hint">Авторы в тренде</string>
+    <string name="discover_most_listened_hint">Самые прослушиваемые</string>
+
+    <string name="created_podcasts_add_new">Создание подкаста</string>
+    <string name="created_podcasts_title">Мои подкасты</string>
+    <string name="create_podcast_title">Создание подкаста</string>
+
+    <string name="account_edit">Редактировать</string>
+    <string name="account_settings">Настройки</string>
+    <string name="account_exit">Выйти</string>
+
+
+</resources>

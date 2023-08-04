@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_margin">16dp</dimen>
+    <dimen name="base_horizontal_margin">@dimen/base_margin</dimen>
+    <dimen name="base_vertical_margin">8dp</dimen>
+
+    <dimen name="notification_icons_size">32dp</dimen>
+    <dimen name="notification_icons_size_small">24dp</dimen>
+
+    <dimen name="default_icon_size_xl">30dp</dimen>
+    <dimen name="default_icon_size">24dp</dimen>
+
+    <dimen name="radius_corner_items">16dp</dimen>
+</resources>

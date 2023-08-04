@@ -1,0 +1,193 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.V21.Theme.BrainBrakers" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryVariant">@color/app_main</item>
+        <item name="colorOnPrimary">@color/app_second</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/gray</item>
+        <item name="colorSecondaryVariant">@color/app_main</item>
+        <item name="colorOnSecondary">@color/app_second</item>
+
+        <!--        <item name="android:background">@color/main_background</item>-->
+        <!--        <item name="colorSurface">@color/main_background</item>-->
+
+
+        <item name="colorError">@color/red</item>
+
+        <!-- Status bar color. -->
+        <item name="android:navigationBarColor">@color/system_bar_bot</item>
+        <!-- Optional: set to transparent if your app is drawing behind the status bar. -->
+        <item name="android:statusBarColor">@color/system_bar_top</item>
+        <!-- Optional: set the status bar light and content dark. -->
+        <item name="android:windowLightStatusBar">true</item>
+
+
+        <!-- Customize your theme here. -->
+        <!--        <item name="android:textSize">16sp</item>-->
+        <item name="bottomNavigationStyle">@style/Widget.BrainBrakers.BottomNavigationView</item>
+        <item name="popupMenuStyle">@style/Widget.BrainBrakers.PopupMenu</item>
+
+        <!-- -->
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Gram.Medium</item>
+
+        <item name="textInputStyle">@style/BrainBrakers.TextInputLayout</item>
+        <item name="alertDialogStyle">@style/ThemeOverlay.BrainBrakers.MaterialAlertDialog</item>
+        <item name="dialogTheme">@style/ThemeOverlay.BrainBrakers.MaterialAlertDialog</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.BrainBrakers.BottomSheetDialog</item>
+        <item name="buttonStyle">@style/Widget.BrainBrakers.Button</item>
+        <item name="android:buttonStyle">@style/Widget.BrainBrakers.Button</item>
+        <item name="materialButtonStyle">@style/Widget.BrainBrakers.Button</item>
+        <item name="toolbarStyle">@style/BrainBrakers.Toolbar</item>
+        <item name="appBarLayoutStyle">@style/BrainBrakers.AppBarLayout</item>
+
+    </style>
+
+
+    <style name="Base.Theme.BrainBrakers" parent="Base.V21.Theme.BrainBrakers" />
+    <!-- Base application theme. -->
+    <style name="Theme.BrainBrakers" parent="Base.Theme.BrainBrakers" />
+
+    <style name="ShapeAppearance.Gram.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">@dimen/radius_corner_items</item>
+    </style>
+
+    <style name="BrainBrakers.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="colorPrimary">@color/toolbar_color</item>
+        <item name="android:background">@color/toolbar_color</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Material3.HeadlineSmall</item>
+        <item name="android:textColorSecondary">@color/app_second</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="BrainBrakers.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="BrainBrakers.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="boxStrokeColor">@color/sel_box_stroke_color</item>
+        <item name="hintTextColor">@color/hint_color</item>
+        <item name="editTextStyle">@style/BrainBrakers.TextInputEditText</item>
+    </style>
+
+    <style name="ThemeOverlay.BrainBrakers.TextInputLayout" parent=""></style>
+
+    <style name="BrainBrakers.TextInputLayout.DropDown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="hintTextColor">@color/hint_color</item>
+        <item name="boxStrokeColor">@color/sel_box_stroke_color</item>
+        <item name="editTextStyle">@style/BrainBrakers.TextInputEditText</item>
+        <item name="textInputStyle">@style/BrainBrakers.TextInputEditText</item>
+        <item name="textInputOutlinedExposedDropdownMenuStyle">@style/BrainBrakers.TextInputEditText
+        </item>
+        <item name="textInputOutlinedStyle">@style/BrainBrakers.TextInputEditText</item>
+    </style>
+
+
+    <style name="BrainBrakers.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="colorPrimary">@color/gray</item>
+        <item name="android:textCursorDrawable">@null
+        </item>  <!--> Без этого цвет курсора не видно <!-->
+        <item name="materialThemeOverlay">@style/BrainBrakers.TextInputEditText.Overlay</item>
+    </style>
+
+    <style name="BrainBrakers.TextInputEditText.Overlay" parent="ThemeOverlay.MaterialComponents.TextInputEditText">
+        <item name="colorControlActivated">@color/gray</item>
+    </style>
+
+
+    <style name="Widget.BrainBrakers.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/redesign_gray_bg</item>
+        <item name="itemTextColor">@color/color_btm_label</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemIconTint">@color/color_btm_icon</item>
+    </style>
+
+    <style name="Widget.BrainBrakers.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:popupBackground">@color/turquoise</item>
+    </style>
+
+    <!--    <style name="ThemeOverlay.BrainBrakers.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">-->
+    <!--        <item name="colorPrimary">@color/light_gray</item>-->
+    <!--        <item name="colorSecondary">@color/gray</item>-->
+    <!--        <item name="colorSurface">@color/separator</item>-->
+    <!--        <item name="colorOnSurface">@color/yellow</item>-->
+    <!--        <item name="alertDialogStyle">@style/MaterialAlertDialog.CyberAgro</item>-->
+    <!--        <item name="materialAlertDialogTitleTextStyle">-->
+    <!--            @style/MaterialAlertDialog.BrainBrakers.Title.Text-->
+    <!--        </item>-->
+    <!--        <item name="buttonBarPositiveButtonStyle">@style/Widget.BrainBrakers.Button</item>-->
+    <!--        <item name="buttonBarNeutralButtonStyle">@style/Widget.BrainBrakers.Button</item>-->
+    <!--        <item name="buttonBarNegativeButtonStyle">@style/Widget.BrainBrakers.NegativeButton</item>-->
+    <!--    </style>-->
+
+    <style name="ThemeOverlay.BrainBrakers.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/Widget.BrainBrakers.AlertDialog</item>
+        <item name="buttonBarButtonStyle">@style/Widget.BrainBrakers.Dialog.Button</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.BrainBrakers.Dialog.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.BrainBrakers.Dialog.Button</item>
+    </style>
+
+    <style name="Widget.BrainBrakers.AlertDialog" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.AlertDialog</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.AlertDialog" parent="">
+        <item name="cornerSize">@dimen/radius_corner_items</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+
+    <style name="ThemeOverlay.BrainBrakers.BottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.BrainBrakers.BottomSheetDialog</item>
+    </style>
+
+    <style name="Widget.BrainBrakers.BottomSheetDialog" parent="Widget.Material3.BottomSheet">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.BottomSheet" parent="">
+        <item name="cornerSize">@dimen/radius_corner_items</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="MaterialAlertDialog.BrainBrakers.Title.Text" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Widget.BrainBrakers.Button" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="shapeAppearance">@style/ShapeAppearance.BrainBrakers.SmallComponent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/black</item>
+        <item name="android:padding">@dimen/base_margin</item>
+    </style>
+
+    <style name="Widget.BrainBrakers.Dialog.Button" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="shapeAppearance">@style/ShapeAppearance.BrainBrakers.SmallComponent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/black</item>
+    </style>
+
+    <style name="Widget.BrainBrakers.NegativeButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="shapeAppearance">@style/ShapeAppearance.BrainBrakers.SmallComponent</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="ShapeAppearance.BrainBrakers.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="ShapeAppearance.BrainBrakers.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+</resources>

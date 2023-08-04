@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/b_nav_home"
+        android:icon="@drawable/ic_home_item"
+        />
+    <item
+        android:id="@+id/discoverFragment"
+        android:title="@string/b_nav_discover"
+        android:icon="@drawable/ic_discover_icon"
+        />
+    <item
+        android:id="@+id/addPodcastFragment"
+        android:title="@string/b_nav_add"
+        android:icon="@drawable/ic_add_podcast_icon"/>
+    <item
+        android:id="@+id/myLibraryFragment"
+        android:title="@string/b_nav_library"
+        android:icon="@drawable/ic_mylibrary_icon"
+        />
+    <item
+        android:id="@+id/accountFragment"
+        android:title="@string/b_nav_account"
+        android:icon="@drawable/ic_user_account"
+        />
+</menu>

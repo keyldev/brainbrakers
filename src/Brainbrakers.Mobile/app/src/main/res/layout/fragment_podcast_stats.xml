@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Navigation.PodcastStatsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/subsCountText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Количество подписчиков: "
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/listenerCountText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Количество прослушиваний"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/ratingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Общий рейтинг:"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
