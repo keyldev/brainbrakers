@@ -25,9 +25,11 @@
 ## Внешний вид мобильного клиента 👾
 
 Скриншоты, демонстрирующие UI ниже.
-
+<details>
+<summary> Скриншоты </summary>
 <image src="img/screen_1.png" width="400">
 <image src="img/screen_2.png" width="400">
 
 <image src="img/screen_3.png" width="400">
 <image src="img/screen_4.png" width="400">
+</details>
