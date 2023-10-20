@@ -18,10 +18,6 @@ namespace podcast_api.Data
         public DbSet<PodcastAuthors> PodcastAuthors { get; set; }
         public DbSet<PodcastStat> PodcastStats { get; set; }
 
-        public ApplicationContext()
-        {
-            Database.EnsureCreated();
-        }
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             

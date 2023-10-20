@@ -1,5 +1,4 @@
-﻿using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
-
+﻿
 namespace podcast_api.Models
 {
     // 18.03 1:45 - Заполнил модель эпизода (надо добавить гитлаб)

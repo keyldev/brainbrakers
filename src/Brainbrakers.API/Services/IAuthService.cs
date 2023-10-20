@@ -8,7 +8,7 @@ namespace Brainbrakers.API.Services
 
         Task<RefreshTokenResponse> Login(LoginRequest request);
         Task<string> RegUser(RegisterRequest user);
-        JwtAuthResult? RefreshToken(RefreshTokenRequest request)
+        JwtAuthResult? RefreshToken(RefreshTokenRequest request);
 
     }
 }

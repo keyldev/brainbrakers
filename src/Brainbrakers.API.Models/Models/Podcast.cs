@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
-
+﻿
 namespace podcast_api.Models
 {
     public class Podcast
