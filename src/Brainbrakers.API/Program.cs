@@ -21,11 +21,11 @@ namespace podcast_api
                 options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                 {
                     ValidateIssuer = true, // 
-                    ValidIssuer = "brainbrakers_xyz_server", // 
+                    ValidIssuer = builder.Configuration.GetSection("Jwt")["Issuer"], // 
                     ValidateAudience = true, // 
-                    ValidAudience = "brainbrakers_xyz_client", // 
+                    ValidAudience = builder.Configuration.GetSection("Jwt")["Audience"], // 
                     ValidateLifetime = true,  //
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("brakersxyz122304!")), 
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("Jwt")["Key"])), 
                     ValidateIssuerSigningKey = true, //
                     ClockSkew = TimeSpan.Zero // 
                 };
