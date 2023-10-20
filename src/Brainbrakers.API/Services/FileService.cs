@@ -1,6 +1,8 @@
-﻿namespace podcast_api.Services
+﻿using Brainbrakers.API.Services;
+
+namespace podcast_api.Services
 {
-    public class FileService
+    public class FileService : IFileService
     {
 
     }

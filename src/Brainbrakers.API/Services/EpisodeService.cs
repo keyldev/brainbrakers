@@ -1,9 +1,10 @@
-﻿using podcast_api.Data;
+﻿using Brainbrakers.API.Services;
+using podcast_api.Data;
 using podcast_api.Models;
 
 namespace podcast_api.Services
 {
-    public class EpisodeService
+    public class EpisodeService : IEpisodeService
     {
         public async Task<bool> UploadEpisodeOnServer(Episode episode, IFormFile request)
         {

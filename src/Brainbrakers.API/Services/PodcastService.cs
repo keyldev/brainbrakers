@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Brainbrakers.API.Services;
+using Microsoft.EntityFrameworkCore;
 using podcast_api.Data;
 using podcast_api.Models;
 using System.Diagnostics;
 
 namespace podcast_api.Services
 {
-    public class PodcastService
+    public class PodcastService : IPodcastService
     {
         public string CreatePodcast(Podcast podcast)
         {

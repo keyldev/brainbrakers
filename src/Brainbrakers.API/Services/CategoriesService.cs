@@ -1,8 +1,9 @@
-﻿using podcast_api.Data;
+﻿using Brainbrakers.API.Services;
+using podcast_api.Data;
 
 namespace podcast_api.Services
 {
-    public class CategoriesService
+    public class CategoriesService : ICategoriesService
     {
 
         public List<string> GetAllCategories()

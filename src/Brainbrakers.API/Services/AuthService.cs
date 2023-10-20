@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Brainbrakers.API.Services;
+using Microsoft.EntityFrameworkCore;
 using podcast_api.Data;
 using podcast_api.Models;
 using System.Diagnostics;
@@ -7,13 +8,8 @@ using System.Security.Claims;
 
 namespace podcast_api.Services
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
-        /// <summary>
-        /// переделать всё на норм жвт
-        /// </summary>
-
-
         TokenService tokenService = new TokenService("brakersxyz122304!"); // вынести в appsettings.json
         public async Task<RefreshTokenResponse> Login(LoginRequest request)
         {

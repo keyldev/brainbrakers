@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Brainbrakers.API.Services;
+using Microsoft.EntityFrameworkCore;
 using podcast_api.Controllers;
 using podcast_api.Data;
 using podcast_api.Models;
@@ -6,7 +7,7 @@ using System.Diagnostics;
 
 namespace podcast_api.Services
 {
-    public class SubscriptionService
+    public class SubscriptionService : ISubscriptionService
     {
         internal bool Subscribe(UserAndPodcast model)
         {
