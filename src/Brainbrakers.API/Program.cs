@@ -1,7 +1,9 @@
+using Brainbrakers.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using podcast_api.Data;
+using podcast_api.Services;
 using System.Text;
 
 namespace podcast_api
@@ -18,6 +20,8 @@ namespace podcast_api
             builder.Services.AddControllers();
             builder.Services.AddAuthorization(); // 
 
+
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
@@ -32,6 +36,11 @@ namespace podcast_api
                     ClockSkew = TimeSpan.Zero // 
                 };
             });
+
+
+            builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+
 
             builder.Services.AddDbContext<ApplicationContext>(options =>
                 options.UseMySql(builder.Configuration.GetSection("ConnectionStrings")["DefaultConnection"], new MySqlServerVersion(new Version(8, 0, 32))));
