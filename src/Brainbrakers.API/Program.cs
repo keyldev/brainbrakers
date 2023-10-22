@@ -1,3 +1,4 @@
+using Brainbrakers.API.Repository;
 using Brainbrakers.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,8 @@ namespace podcast_api
                 };
             });
 
+            builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();

@@ -1,4 +1,5 @@
-﻿using Brainbrakers.API.Services;
+﻿using Brainbrakers.API.Repository;
+using Brainbrakers.API.Services;
 using Microsoft.EntityFrameworkCore;
 using podcast_api.Data;
 using podcast_api.Models;
@@ -10,9 +11,30 @@ namespace podcast_api.Services
 {
     public class AuthService : IAuthService
     {
-        TokenService tokenService = new TokenService("brakersxyz122304!"); // вынести в appsettings.json
-        public async Task<RefreshTokenResponse> Login(LoginRequest request)
+        private readonly ITokenService _tokenService;
+        private readonly IAuthRepository _authRepository;
+        public AuthService(ITokenService tokenService, IAuthRepository authRepository)
         {
+            _tokenService = tokenService;
+            _authRepository = authRepository;
+        }
+
+        public async Task<RefreshTokenResponse> LoginAsync(LoginRequest request)
+        {
+            var user = await _authRepository.LoginUserAsync(request);
+            if (user is not null)
+            {
+                var claims = new[]
+                {
+                        new Claim(ClaimTypes.Name, request.Username),
+                };
+                return new RefreshTokenResponse()
+                {
+                    RefreshToken = user.RefreshToken.TokenString,
+                    AccessToken = _tokenService.GenerateAccessToken(claims)
+                };
+
+            }
             return null;
             //using (ApplicationContext db = new ApplicationContext())
             //{
@@ -45,7 +67,7 @@ namespace podcast_api.Services
             //            new Claim(ClaimTypes.Name, user.Username),
             //            new Claim(ClaimTypes.Email, user.Email)
             //        };
-                    
+
             //        User u = new User();
             //        u.Username = user.Username;
             //        u.Password = user.Password;

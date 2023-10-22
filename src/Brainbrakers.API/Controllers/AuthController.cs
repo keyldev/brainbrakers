@@ -30,8 +30,8 @@ namespace podcast_api.Controllers
         {
             _logger.LogInformation(nameof(LoginUser));
 
-            var result = await _authService.Login(user);
-            if (result == null) return BadRequest();
+            var result = await _authService.LoginAsync(user);
+            if (result == null) return NotFound();
             return Ok(result);
         }
         [HttpPost("logout")]
