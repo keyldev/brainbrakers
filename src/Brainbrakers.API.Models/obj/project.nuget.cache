@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pgkPiPZo1+t6IeSI1grsn6VQjfmOUITo7z0Mj2FSB5mBQquR7wQ5cQTOe1JSMAxLRpBnpU6jPRQra+VWMz+N1A==",
+  "dgSpecHash": "hmD9kYuIf05WeBE7T0qP35Rxd7IJdiRx7UVaqKUY66exDA+MH3POLk5bG07BluQpvwmTqL5l5PGdRXs+BP+X0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\vasya\\Desktop\\Brainbrakers\\src\\Brainbrakers.API.Models\\Brainbrakers.API.Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vasya\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\vasya\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\vasya\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

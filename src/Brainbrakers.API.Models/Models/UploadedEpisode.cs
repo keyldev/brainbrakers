@@ -1,4 +1,6 @@
-﻿namespace podcast_api.Models
+﻿using Microsoft.AspNetCore.Http;
+
+namespace podcast_api.Models
 {
     public class UploadedEpisode
     {

@@ -1,0 +1,12 @@
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.csproj.AssemblyReference.cache
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.AssemblyInfoInputs.cache
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.AssemblyInfo.cs
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.csproj.CoreCompileInputs.cache
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\bin\Debug\net6.0\Brainbrakers.API.Models.deps.json
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\bin\Debug\net6.0\Brainbrakers.API.Models.dll
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\bin\Debug\net6.0\Brainbrakers.API.Models.pdb
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.dll
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\refint\Brainbrakers.API.Models.dll
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\Brainbrakers.API.Models.pdb
+C:\Users\vasya\Desktop\Brainbrakers\src\Brainbrakers.API.Models\obj\Debug\net6.0\ref\Brainbrakers.API.Models.dll

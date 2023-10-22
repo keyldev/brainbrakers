@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.OAuth;
+﻿using Brainbrakers.API.Services;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.IdentityModel.Tokens;
 using podcast_api.Models;
@@ -9,13 +10,18 @@ using System.Text;
 
 namespace podcast_api.Services
 {
-    public class TokenService
+    public class TokenService : ITokenService
     {
+        private readonly IConfiguration _configuration;
         private readonly string _key;
-
-        public TokenService(string key)
+        private readonly string _issuer, _audience;
+        public TokenService(IConfiguration configuration)
         {
-            _key = key;
+            _configuration  = configuration;
+
+            _key = configuration.GetSection("Jwt")["Key"];
+            _issuer = configuration.GetSection("Jwt")["Issuer"];
+            _audience = configuration.GetSection("Jwt")["Audience"];
         }
 
         public string GenerateAccessToken(IEnumerable<Claim> claims)
@@ -23,8 +29,8 @@ namespace podcast_api.Services
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_key));
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
             var jwt = new JwtSecurityToken(
-                issuer: "brainbrakers_xyz_server",
-                audience: "brainbrakers_xyz_client",
+                issuer: _issuer,
+                audience: _audience,
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(30),
                 signingCredentials: signingCredentials);
@@ -36,8 +42,8 @@ namespace podcast_api.Services
         {
             var shouldAddAudienceClaim = string.IsNullOrWhiteSpace(claims?.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Aud)?.Value);
             var jwt = new JwtSecurityToken(
-                issuer: "brainbrakers_xyz_server",
-                audience: shouldAddAudienceClaim ? "brainbrakers_xyz_client" : "",
+                issuer: _issuer,
+                audience: shouldAddAudienceClaim ? _audience : "",
                 claims: claims,
                 notBefore: now,
                 expires: now.Add(TimeSpan.FromMinutes(5)),

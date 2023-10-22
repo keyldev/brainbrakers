@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Brainbrakers.API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using podcast_api.Models;
@@ -13,15 +14,24 @@ namespace podcast_api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private AuthService _authService = new AuthService();
+        private readonly IAuthService _authService;
+        private readonly ILogger _logger;
+
+        public AuthController(ILogger<AuthController> logger, IAuthService authService)
+        {
+            _authService = authService;
+
+            _logger = logger;
+
+        }
 
         [HttpPost("login")]
         public async Task<IActionResult> LoginUser([FromBody] LoginRequest user)
         {
-            var result = await _authService.Login(user);
+            _logger.LogInformation(nameof(LoginUser));
 
-            Debug.WriteLine(user.Password);
-            if (result == null) return BadRequest();
+            var result = await _authService.LoginAsync(user);
+            if (result == null) return NotFound();
             return Ok(result);
         }
         [HttpPost("logout")]

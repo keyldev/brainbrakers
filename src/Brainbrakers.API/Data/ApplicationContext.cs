@@ -18,19 +18,15 @@ namespace podcast_api.Data
         public DbSet<PodcastAuthors> PodcastAuthors { get; set; }
         public DbSet<PodcastStat> PodcastStats { get; set; }
 
-        public ApplicationContext()
-        {
-            Database.EnsureCreated();
-        }
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseMySql("server=localhost;user=root;password=keyldev;database=podcastsdb", new MySqlServerVersion(new Version(8, 0, 32)));
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseMySql("server=localhost;user=root;password=keyldev;database=podcastsdb", new MySqlServerVersion(new Version(8, 0, 32)));
+        //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

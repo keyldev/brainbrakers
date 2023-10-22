@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Brainbrakers.API.Services;
+using Microsoft.EntityFrameworkCore;
 using podcast_api.Controllers;
 using podcast_api.Data;
 using podcast_api.Models;
@@ -6,11 +7,11 @@ using System.Diagnostics;
 
 namespace podcast_api.Services
 {
-    public class SubscriptionService
+    public class SubscriptionService : ISubscriptionService
     {
         internal bool Subscribe(UserAndPodcast model)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            /*using (ApplicationContext db = new ApplicationContext())
             {
                 var userId = model.UserId;
                 var podcastId = model.PodcastId;
@@ -57,25 +58,27 @@ namespace podcast_api.Services
                 }
 
                 return false;
-            }
+            }*/
+            return false;
         }
 
         public List<Podcast> GetSubscribedPodcasts(Guid userId)
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
-                var subscribedPodcasts = db.Subscription
-                    .Where(s => s.UserId == userId)
-                    .Include(s => s.Podcast)
-                    .Select(s => s.Podcast)
-                    .ToList();
-                return subscribedPodcasts;
-            }
+            //using (ApplicationContext db = new ApplicationContext())
+            //{
+            //    var subscribedPodcasts = db.Subscription
+            //        .Where(s => s.UserId == userId)
+            //        .Include(s => s.Podcast)
+            //        .Select(s => s.Podcast)
+            //        .ToList();
+            //    return subscribedPodcasts;
+            //}
+            return null;
         }
 
         internal bool Unsubscribe(UserAndPodcast model)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            /*using (ApplicationContext db = new ApplicationContext())
             {
                 var userId = model.UserId;
                 var podcastId = model.PodcastId;
@@ -112,7 +115,8 @@ namespace podcast_api.Services
                 }
 
                 return false;
-            }
+            }*/
+            return false;
         }
         /*internal List<Podcast> GetPodcastsByUserId(Guid userId)
 {
