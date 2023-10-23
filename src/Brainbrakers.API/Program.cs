@@ -42,6 +42,15 @@ namespace podcast_api
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
+            builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+            builder.Services.AddScoped<IEpisodesRepository, EpisodesRepository>();
+            builder.Services.AddScoped<IPodcastRepository, PodcastRepository>();
+            builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
+
+            builder.Services.AddScoped<IEpisodeService, EpisodeService>();
+            builder.Services.AddScoped<IPodcastService, PodcastService>();
+            builder.Services.AddScoped<ICategoriesService, CategoriesService>();
+
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
 

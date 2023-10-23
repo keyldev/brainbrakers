@@ -5,6 +5,13 @@ namespace podcast_api.Services
 {
     public class CategoriesService : ICategoriesService
     {
+        private readonly ICategoriesService _categoriesService;
+        
+        public CategoriesService(ICategoriesService categoriesService)
+        {
+            _categoriesService = categoriesService;
+        }
+
 
         public List<string> GetAllCategories()
         {

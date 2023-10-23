@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.API", "Brainbr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.API.Models", "..\Brainbrakers.API.Models\Brainbrakers.API.Models.csproj", "{F017527B-05B3-45AF-B589-A6AADD8EBE84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Desktop", "..\Brainbrakers.Client.Desktop\Brainbrakers.Client.Desktop.csproj", "{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.Client.Desktop", "..\Brainbrakers.Client.Desktop\Brainbrakers.Client.Desktop.csproj", "{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
