@@ -1,4 +1,4 @@
-﻿using Brainbrakers.API.Services;
+﻿using Brainbrakers.API.Services.Interfaces;
 
 namespace podcast_api.Services
 {

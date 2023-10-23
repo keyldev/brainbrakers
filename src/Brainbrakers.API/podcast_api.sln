@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.API", "Brainbrakers.API.csproj", "{B5FA9D92-E103-4596-B679-C855D6CEA31F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.API.Models", "..\Brainbrakers.API.Models\Brainbrakers.API.Models.csproj", "{F017527B-05B3-45AF-B589-A6AADD8EBE84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.API.Models", "..\Brainbrakers.API.Models\Brainbrakers.API.Models.csproj", "{F017527B-05B3-45AF-B589-A6AADD8EBE84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Desktop", "..\Brainbrakers.Client.Desktop\Brainbrakers.Client.Desktop.csproj", "{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F017527B-05B3-45AF-B589-A6AADD8EBE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F017527B-05B3-45AF-B589-A6AADD8EBE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F017527B-05B3-45AF-B589-A6AADD8EBE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

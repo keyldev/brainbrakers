@@ -1,4 +1,5 @@
-﻿using podcast_api.Data;
+﻿using Brainbrakers.API.Repository.Interfaces;
+using podcast_api.Data;
 
 namespace Brainbrakers.API.Repository
 {

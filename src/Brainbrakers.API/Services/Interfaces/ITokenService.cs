@@ -2,7 +2,7 @@
 using podcast_api.Services;
 using System.Security.Claims;
 
-namespace Brainbrakers.API.Services
+namespace Brainbrakers.API.Services.Interfaces
 {
     public interface ITokenService
     {

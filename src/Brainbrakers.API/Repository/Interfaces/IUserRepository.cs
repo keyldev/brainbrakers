@@ -1,4 +1,4 @@
-﻿namespace Brainbrakers.API.Repository
+﻿namespace Brainbrakers.API.Repository.Interfaces
 {
     public interface IUserRepository
     {

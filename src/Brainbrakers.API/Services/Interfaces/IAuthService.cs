@@ -1,7 +1,7 @@
 ﻿using podcast_api.Models;
 using podcast_api.Services;
 
-namespace Brainbrakers.API.Services
+namespace Brainbrakers.API.Services.Interfaces
 {
     public interface IAuthService
     {
