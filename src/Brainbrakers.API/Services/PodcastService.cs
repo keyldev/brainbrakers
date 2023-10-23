@@ -8,6 +8,13 @@ namespace podcast_api.Services
 {
     public class PodcastService : IPodcastService
     {
+        private readonly IPodcastService _podcastService;
+
+        public PodcastService(IPodcastService podcastService)
+        {
+            _podcastService = podcastService;
+        }
+
         public string CreatePodcast(Podcast podcast)
         {
             //using (ApplicationContext db = new ApplicationContext())

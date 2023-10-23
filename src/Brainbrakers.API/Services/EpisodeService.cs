@@ -6,6 +6,12 @@ namespace podcast_api.Services
 {
     public class EpisodeService : IEpisodeService
     {
+        private readonly IEpisodeService _episodesService;
+        public EpisodeService(IEpisodeService episodesService)
+        {
+            _episodesService = episodesService;
+        }
+
         public async Task<bool> UploadEpisodeOnServer(Episode episode, IFormFile request)
         {
 
