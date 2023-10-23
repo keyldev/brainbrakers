@@ -7,17 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.API", "Brainbr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.API.Models", "..\Brainbrakers.API.Models\Brainbrakers.API.Models.csproj", "{F017527B-05B3-45AF-B589-A6AADD8EBE84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Desktop", "..\Brainbrakers.Client.Desktop\Brainbrakers.Client.Desktop.csproj", "{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Avalonia", "..\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia.csproj", "{654FB17C-880A-4BB0-B428-CBDD0CCB0E17}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Avalonia.Android", "..\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia.Android\Brainbrakers.Client.Avalonia.Android.csproj", "{AD2760D2-5AD6-4603-AE7D-4E26CCF20F5F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Avalonia.Desktop", "..\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia.Desktop\Brainbrakers.Client.Avalonia.Desktop.csproj", "{E8DC7D04-6C07-42E2-B3E0-395C65DDC19E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Avalonia.iOS", "..\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia.iOS\Brainbrakers.Client.Avalonia.iOS.csproj", "{0F375759-493A-4DE7-9039-09F418EB3280}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brainbrakers.Client.Avalonia.Browser", "..\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia.Browser\Brainbrakers.Client.Avalonia.Browser.csproj", "{231C849C-0434-47F4-9608-80DC92804152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brainbrakers.Client.Desktop", "..\Brainbrakers.Client.Desktop\Brainbrakers.Client.Desktop.csproj", "{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,26 +27,6 @@ Global
 		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0357BBE1-B0CD-492C-BAB6-78A996F1E73B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{654FB17C-880A-4BB0-B428-CBDD0CCB0E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{654FB17C-880A-4BB0-B428-CBDD0CCB0E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{654FB17C-880A-4BB0-B428-CBDD0CCB0E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{654FB17C-880A-4BB0-B428-CBDD0CCB0E17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD2760D2-5AD6-4603-AE7D-4E26CCF20F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD2760D2-5AD6-4603-AE7D-4E26CCF20F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD2760D2-5AD6-4603-AE7D-4E26CCF20F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD2760D2-5AD6-4603-AE7D-4E26CCF20F5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8DC7D04-6C07-42E2-B3E0-395C65DDC19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8DC7D04-6C07-42E2-B3E0-395C65DDC19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8DC7D04-6C07-42E2-B3E0-395C65DDC19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8DC7D04-6C07-42E2-B3E0-395C65DDC19E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F375759-493A-4DE7-9039-09F418EB3280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F375759-493A-4DE7-9039-09F418EB3280}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F375759-493A-4DE7-9039-09F418EB3280}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F375759-493A-4DE7-9039-09F418EB3280}.Release|Any CPU.Build.0 = Release|Any CPU
-		{231C849C-0434-47F4-9608-80DC92804152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{231C849C-0434-47F4-9608-80DC92804152}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{231C849C-0434-47F4-9608-80DC92804152}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{231C849C-0434-47F4-9608-80DC92804152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

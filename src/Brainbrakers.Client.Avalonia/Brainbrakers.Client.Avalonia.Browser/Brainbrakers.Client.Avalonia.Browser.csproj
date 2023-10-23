@@ -7,14 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <WasmExtraFilesToDeploy Include="AppBundle\**"/>
+        <WasmExtraFilesToDeploy Include="AppBundle\**" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Brainbrakers.Client.Avalonia\Brainbrakers.Client.Avalonia.csproj"/>
+        <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
     </ItemGroup>
 </Project>
