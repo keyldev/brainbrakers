@@ -1,5 +1,6 @@
 using Brainbrakers.API.Repository;
-using Brainbrakers.API.Services;
+using Brainbrakers.API.Repository.Interfaces;
+using Brainbrakers.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

@@ -1,7 +1,7 @@
 ﻿using podcast_api.Models;
 using System.Security.Claims;
 
-namespace Brainbrakers.API.Repository
+namespace Brainbrakers.API.Repository.Interfaces
 {
     public interface IAuthRepository
     {

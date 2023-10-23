@@ -1,4 +1,4 @@
-﻿using Brainbrakers.API.Services;
+﻿using Brainbrakers.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,4 +1,4 @@
-﻿using Brainbrakers.API.Services;
+﻿using Brainbrakers.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using podcast_api.Controllers;
 using podcast_api.Data;

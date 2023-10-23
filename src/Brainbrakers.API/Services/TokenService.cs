@@ -1,4 +1,4 @@
-﻿using Brainbrakers.API.Services;
+﻿using Brainbrakers.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.IdentityModel.Tokens;
@@ -19,9 +19,9 @@ namespace podcast_api.Services
         {
             _configuration  = configuration;
 
-            _key = configuration.GetSection("Jwt")["Key"];
-            _issuer = configuration.GetSection("Jwt")["Issuer"];
-            _audience = configuration.GetSection("Jwt")["Audience"];
+            _key = _configuration.GetSection("Jwt")["Key"];
+            _issuer = _configuration.GetSection("Jwt")["Issuer"];
+            _audience = _configuration.GetSection("Jwt")["Audience"];
         }
 
         public string GenerateAccessToken(IEnumerable<Claim> claims)
