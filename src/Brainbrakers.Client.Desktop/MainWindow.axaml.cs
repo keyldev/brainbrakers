@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Brainbrakers.Client.Desktop.MVVM.ViewModel;
 
 namespace Brainbrakers.Client.Desktop
 {
@@ -7,6 +8,7 @@ namespace Brainbrakers.Client.Desktop
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowVM();
         }
     }
 }
