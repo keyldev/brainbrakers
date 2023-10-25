@@ -1,4 +1,5 @@
-﻿using Brainbrakers.API.Services.Interfaces;
+﻿using Brainbrakers.API.Repository.Interfaces;
+using Brainbrakers.API.Services.Interfaces;
 using podcast_api.Data;
 using podcast_api.Models;
 
@@ -6,10 +7,10 @@ namespace podcast_api.Services
 {
     public class EpisodeService : IEpisodeService
     {
-        private readonly IEpisodeService _episodesService;
-        public EpisodeService(IEpisodeService episodesService)
+        private readonly IEpisodesRepository _episodesRepository;
+        public EpisodeService(IEpisodesRepository episodesRepository)
         {
-            _episodesService = episodesService;
+            _episodesRepository = episodesRepository;
         }
 
         public async Task<bool> UploadEpisodeOnServer(Episode episode, IFormFile request)

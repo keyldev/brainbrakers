@@ -14,46 +14,46 @@ namespace podcast_api.Controllers
     public class SubscriptionController : ControllerBase
     {
 
-        SubscriptionService subs = new SubscriptionService();
+        //SubscriptionService subs = new SubscriptionService();
 
-        // Auth methods.
-        /// <summary>
-        /// Подписывает пользователя на подкаст
-        /// </summary>
-        /// <param name="id">Идентификатор подкаста</param>
-        [HttpPost("subscribe")]
-        public IActionResult SubscribePodcastByID([FromBody] UserAndPodcast model)
-        {
+        //// Auth methods.
+        ///// <summary>
+        ///// Подписывает пользователя на подкаст
+        ///// </summary>
+        ///// <param name="id">Идентификатор подкаста</param>
+        //[HttpPost("subscribe")]
+        //public IActionResult SubscribePodcastByID([FromBody] UserAndPodcast model)
+        //{
 
-            Debug.WriteLine($"User id: {model.UserId}\nPodcast id: {model.PodcastId}");
+        //    Debug.WriteLine($"User id: {model.UserId}\nPodcast id: {model.PodcastId}");
 
-            var result = subs.Subscribe(model);
-            if (result) return Ok();
-            return BadRequest();
-        }/// <summary>
-         /// Включение/выключение уведомлений в подкасте
-         /// </summary>
-         /// <param name="id">Идентификатор подкаста</param>
-        [HttpPost("{id}/notification")]
-        public void UpdateNotificationByID(int id)
-        {
+        //    var result = subs.Subscribe(model);
+        //    if (result) return Ok();
+        //    return BadRequest();
+        //}/// <summary>
+        // /// Включение/выключение уведомлений в подкасте
+        // /// </summary>
+        // /// <param name="id">Идентификатор подкаста</param>
+        //[HttpPost("{id}/notification")]
+        //public void UpdateNotificationByID(int id)
+        //{
 
-        }
+        //}
 
-        /// <summary>
-        /// Отписка от подкаста
-        /// </summary>
-        /// <param name="id">Идентификатор подкаста</param>
-        [HttpPost("unsubscribe")]
-        public IActionResult UnsubscribePodcastByID([FromBody] UserAndPodcast model)
-        {
-            var result = subs.Unsubscribe(model);
-            if (result)
-            {
-                return Ok();
-            }
-            else return BadRequest();
-        }
+        ///// <summary>
+        ///// Отписка от подкаста
+        ///// </summary>
+        ///// <param name="id">Идентификатор подкаста</param>
+        //[HttpPost("unsubscribe")]
+        //public IActionResult UnsubscribePodcastByID([FromBody] UserAndPodcast model)
+        //{
+        //    var result = subs.Unsubscribe(model);
+        //    if (result)
+        //    {
+        //        return Ok();
+        //    }
+        //    else return BadRequest();
+        //}
 
     }
     public class UserAndPodcast

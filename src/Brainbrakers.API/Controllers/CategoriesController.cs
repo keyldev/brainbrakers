@@ -8,22 +8,22 @@ namespace podcast_api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        CategoriesService categories = new CategoriesService();
-        [HttpGet("all")]
-        public IActionResult GetAllCategories()
-        {
-            var result = categories.GetAllCategories();
-            if (result != null) return Ok(result);
-            else return NotFound();
-        }
+        //CategoriesService categories = new CategoriesService();
+        //[HttpGet("all")]
+        //public IActionResult GetAllCategories()
+        //{
+        //    var result = categories.GetAllCategories();
+        //    if (result != null) return Ok(result);
+        //    else return NotFound();
+        //}
 
-        [HttpGet("keywords")]
-        public IActionResult GetAllKeywords()
-        {
-            var result = categories.GetAllKeywords();
-            if (result != null) return Ok(result);
-            else return NotFound();
-        }
+        //[HttpGet("keywords")]
+        //public IActionResult GetAllKeywords()
+        //{
+        //    var result = categories.GetAllKeywords();
+        //    if (result != null) return Ok(result);
+        //    else return NotFound();
+        //}
         
     }
 }

@@ -27,83 +27,83 @@ namespace podcast_api.Controllers
     [ApiController]
     public class EpisodeController : ControllerBase
     {
-        private EpisodeService episodeService = new EpisodeService();
+        //private EpisodeService episodeService = new EpisodeService();
 
-        [HttpGet("{id}/info")]
-        public IActionResult GetEpisodeInfoByID(Guid id)
-        {
-            var result = episodeService.GetEpisodeInfo(id);
-            if (result == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(result);
-            }
-        }
+        //[HttpGet("{id}/info")]
+        //public IActionResult GetEpisodeInfoByID(Guid id)
+        //{
+        //    var result = episodeService.GetEpisodeInfo(id);
+        //    if (result == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    else
+        //    {
+        //        return Ok(result);
+        //    }
+        //}
 
-        [HttpPost("create")]
-        public async Task<IActionResult> CreateEpisode([FromForm] string episode, [FromForm(Name = "audioFile")] IFormFile audioFile)
-        {
-            Debug.WriteLine(episode);
-            if (episode == null) Debug.WriteLine("Эпизода нема");
-            var episodes = JsonConvert.DeserializeObject<Episode>(episode);
+        //[HttpPost("create")]
+        //public async Task<IActionResult> CreateEpisode([FromForm] string episode, [FromForm(Name = "audioFile")] IFormFile audioFile)
+        //{
+        //    Debug.WriteLine(episode);
+        //    if (episode == null) Debug.WriteLine("Эпизода нема");
+        //    var episodes = JsonConvert.DeserializeObject<Episode>(episode);
 
-            Debug.WriteLine("File file file: " + audioFile.FileName + " \n  " + episodes.Title + " " + episodes.Id + "\n" + episodes.PodcastId);
-            var result = await episodeService.UploadEpisodeOnServer(episodes, audioFile);
-            if (result) return Ok();
-            else return BadRequest();
-        }
-        [HttpGet("{id}/audio")]
-        public IActionResult GetEpisodeAudio(Guid id)
-        {
-            var filePath = $"{AppDomain.CurrentDomain.BaseDirectory}/episodes/{id}/1.mp3";
-            episodeService.UpdateStats(id);
-            // NOTE: because you're serving media files, you should specify the MIME type
-            return PhysicalFile(filePath, "audio/mpeg");
-        }
+        //    Debug.WriteLine("File file file: " + audioFile.FileName + " \n  " + episodes.Title + " " + episodes.Id + "\n" + episodes.PodcastId);
+        //    var result = await episodeService.UploadEpisodeOnServer(episodes, audioFile);
+        //    if (result) return Ok();
+        //    else return BadRequest();
+        //}
+        //[HttpGet("{id}/audio")]
+        //public IActionResult GetEpisodeAudio(Guid id)
+        //{
+        //    var filePath = $"{AppDomain.CurrentDomain.BaseDirectory}/episodes/{id}/1.mp3";
+        //    episodeService.UpdateStats(id);
+        //    // NOTE: because you're serving media files, you should specify the MIME type
+        //    return PhysicalFile(filePath, "audio/mpeg");
+        //}
 
 
-        [HttpPost("create2")]
-        public async Task<IActionResult> CreateEpisode2([FromForm] Episode episode, [FromForm(Name = "audioFile")] IFormFile audioFile)
-        {
-            if (audioFile == null || audioFile.Length == 0)
-                return BadRequest("Audio file is not provided");
+        //[HttpPost("create2")]
+        //public async Task<IActionResult> CreateEpisode2([FromForm] Episode episode, [FromForm(Name = "audioFile")] IFormFile audioFile)
+        //{
+        //    if (audioFile == null || audioFile.Length == 0)
+        //        return BadRequest("Audio file is not provided");
 
-            // save the file to disk
-            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AudioFiles", audioFile.FileName);
-            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/AudioFiles");
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await audioFile.CopyToAsync(stream);
-            }
+        //    // save the file to disk
+        //    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AudioFiles", audioFile.FileName);
+        //    Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/AudioFiles");
+        //    using (var stream = new FileStream(filePath, FileMode.Create))
+        //    {
+        //        await audioFile.CopyToAsync(stream);
+        //    }
 
-            // save the episode to the database
-            // use the episode object that is received in the form data
-            // and the file path where the audio file is stored
-            // to create a new episode record in the database
+        //    // save the episode to the database
+        //    // use the episode object that is received in the form data
+        //    // and the file path where the audio file is stored
+        //    // to create a new episode record in the database
 
-            return Ok();
+        //    return Ok();
 
-        }
-        // ????
-        [HttpPatch("{id}/update")]
-        public void UpdateEpisodeInfoByID(int id)
-        {
+        //}
+        //// ????
+        //[HttpPatch("{id}/update")]
+        //public void UpdateEpisodeInfoByID(int id)
+        //{
 
-        }
+        //}
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
 
-        }
+        //}
 
-        [HttpDelete("{id}/delete")]
-        public void DeleteEpisodeByID(int id)
-        {
+        //[HttpDelete("{id}/delete")]
+        //public void DeleteEpisodeByID(int id)
+        //{
 
-        }
+        //}
     }
 }

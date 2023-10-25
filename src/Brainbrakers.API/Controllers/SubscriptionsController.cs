@@ -10,22 +10,22 @@ namespace podcast_api.Controllers
     public class SubscriptionsController : ControllerBase
     {
 
-        SubscriptionService subs = new SubscriptionService();
+        //SubscriptionService subs = new SubscriptionService();
 
-        // authentication
-        [HttpGet("{id}/all")]
-        public IActionResult GetUserSubscriptions(Guid id) // здесь через JWT UserID
-        {
-            var result = subs.GetSubscribedPodcasts(id);
+        //// authentication
+        //[HttpGet("{id}/all")]
+        //public IActionResult GetUserSubscriptions(Guid id) // здесь через JWT UserID
+        //{
+        //    var result = subs.GetSubscribedPodcasts(id);
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
-        [HttpDelete("unsubscribe/all")]
-        public void UnsubscribeAllPodcasts()
-        {
+        //[HttpDelete("unsubscribe/all")]
+        //public void UnsubscribeAllPodcasts()
+        //{
 
-        }
+        //}
 
     }
 }
