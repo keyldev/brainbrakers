@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using podcast_api.Services;
 
@@ -8,6 +9,11 @@ namespace podcast_api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private readonly ICategoriesService _categoriesService;
+        public CategoriesController(ICategoriesService categoriesService)
+        {
+            _categoriesService = categoriesService;
+        }
         //CategoriesService categories = new CategoriesService();
         //[HttpGet("all")]
         //public IActionResult GetAllCategories()
@@ -24,6 +30,6 @@ namespace podcast_api.Controllers
         //    if (result != null) return Ok(result);
         //    else return NotFound();
         //}
-        
+
     }
 }
