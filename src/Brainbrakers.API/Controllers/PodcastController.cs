@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -23,6 +24,12 @@ namespace podcast_api.Controllers
     public class PodcastController : ControllerBase
     {
         //    private PodcastService podcastService = new PodcastService();
+        private readonly IPodcastService _podcastService;
+        public PodcastController(IPodcastService podcastService)
+        {
+            _podcastService = podcastService;
+        }
+
 
         //    [HttpGet("{id}/info")]
         //    public IActionResult GetPodcastInfoByID(Guid id)

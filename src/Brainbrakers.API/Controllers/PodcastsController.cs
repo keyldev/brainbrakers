@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using podcast_api.Models;
 using podcast_api.Services;
 
@@ -18,6 +19,12 @@ namespace podcast_api.Controllers
     public class PodcastsController : ControllerBase
     {
         //PodcastService podcasts = new PodcastService(); // change to middleware?
+
+        private readonly IPodcastService _podcastService;
+        public PodcastsController(IPodcastService podcastService)
+        {
+            _podcastService = podcastService;
+        }
 
         //[HttpGet("all")]
         //public List<Podcast> GetAllPodcasts()
@@ -66,7 +73,7 @@ namespace podcast_api.Controllers
         //{
         //    public Guid id { get; set; }
         //    public String genres { get; set; }
-            
+
         //}
 
         //// DELETE api/<PodcastsController>/5

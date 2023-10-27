@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using podcast_api.Services;
@@ -9,6 +10,11 @@ namespace podcast_api.Controllers
     [ApiController]
     public class SubscriptionsController : ControllerBase
     {
+        private readonly ISubscriptionService _subsService;
+        public SubscriptionsController(ISubscriptionService subsService)
+        {
+            _subsService = subsService;
+        }
 
         //SubscriptionService subs = new SubscriptionService();
 

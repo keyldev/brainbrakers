@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using podcast_api.Services;
@@ -13,6 +14,11 @@ namespace podcast_api.Controllers
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class SubscriptionController : ControllerBase
     {
+        private readonly ISubscriptionService _subService;
+        public SubscriptionController(ISubscriptionService subService)
+        {
+            _subService = subService;
+        }
 
         //SubscriptionService subs = new SubscriptionService();
 
