@@ -14,22 +14,26 @@ namespace podcast_api.Controllers
         {
             _categoriesService = categoriesService;
         }
-        //CategoriesService categories = new CategoriesService();
-        //[HttpGet("all")]
-        //public IActionResult GetAllCategories()
-        //{
-        //    var result = categories.GetAllCategories();
-        //    if (result != null) return Ok(result);
-        //    else return NotFound();
-        //}
-
-        //[HttpGet("keywords")]
-        //public IActionResult GetAllKeywords()
-        //{
-        //    var result = categories.GetAllKeywords();
-        //    if (result != null) return Ok(result);
-        //    else return NotFound();
-        //}
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllCategoriesAsync()
+        {
+            var categoriesList = await _categoriesService.GetAllCategoriesAsync();
+            if (categoriesList == null)
+            {
+                return NotFound();
+            }
+            else return Ok(categoriesList);
+        }
+        [HttpGet("keywords")]
+        public async Task<IActionResult> GetAllKeywordsAsync()
+        {
+            var keywordsList = await _categoriesService.GetAllKeywordsAsync();
+            if (keywordsList == null)
+            {
+                return NotFound();
+            }
+            else return Ok(keywordsList);
+        }
 
     }
 }
