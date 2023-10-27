@@ -13,39 +13,6 @@ namespace podcast_api.Services
             _episodesRepository = episodesRepository;
         }
 
-        public async Task<bool> UploadEpisodeOnServer(Episode episode, IFormFile request)
-        {
-
-            //using (ApplicationContext db = new ApplicationContext())
-            //{
-
-            //    var ep = db.Episodes.Any(e => episode.Title == e.Title);
-            //    if (ep)
-            //        return false;
-            //    else
-            //    {
-            //        // проверка на вес файла, ограничить макс вес, к примеру, 256 мегабайтами.
-            //        var file = request;
-            //        if (file == null) return false;
-            //        var uploadPath = AppDomain.CurrentDomain.BaseDirectory + "/episodes/" + episode.Id;
-            //        Directory.CreateDirectory(uploadPath);
-            //        string fullPath = $"{uploadPath}/{episode.EpisodeNumber}.mp3";
-            //        episode.AudioURL = fullPath ?? "";
-
-
-            //        using (var fileStream = new FileStream(fullPath, FileMode.Create))
-            //        {
-            //            await file.CopyToAsync(fileStream);
-            //        }
-            //        db.Episodes.Add(episode);
-            //        db.SaveChanges();
-            //        return true;
-            //    }
-            //}
-            return true;
-            
-        }
-  
         public Episode? GetEpisodeInfo(Guid id)
         {
             //using (var db = new ApplicationContext())
@@ -55,7 +22,35 @@ namespace podcast_api.Services
             //}
             return null;
         }
+        public async Task<Episode> GetEpisodeAsync(Guid id)
+        {
+            var episodeDto = await _episodesRepository.GetEpisodeAsync(id);
+            return episodeDto;
+        }
 
+        public async Task<bool> CreateEpisodeAsync(Episode episode, IFormFile audioFile)
+        {
+            var isEpisodeExists = await _episodesRepository.GetEpisodeByTitleAsync(episode.Title);
+            if (isEpisodeExists != null)
+                return false; // if episode with the same id exists - we need to say error cause.
+            else
+            {
+                // refactor this sh**
+                
+                if (audioFile == null) return false;
+                var uploadPath = AppDomain.CurrentDomain.BaseDirectory + "/episodes/" + episode.Id;
+                Directory.CreateDirectory(uploadPath);
+                string fullPath = $"{uploadPath}/{episode.EpisodeNumber}.mp3";
+                episode.AudioURL = fullPath;
+                
+                using(var fileStream = new FileStream(fullPath, FileMode.Create))
+                {
+                    await audioFile.CopyToAsync(fileStream);
+                }
+                var episodeCreationResult = await _episodesRepository.CreateEpisodeAsync(episode);
+                return episodeCreationResult;
+            }
+        }
         public void UpdateStats(Guid id)
         {
             //using ApplicationContext db = new ApplicationContext();
@@ -86,6 +81,7 @@ namespace podcast_api.Services
             //}
             //db.SaveChanges();
         }
+
     }
 }
 
