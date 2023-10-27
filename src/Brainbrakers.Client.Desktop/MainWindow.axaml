@@ -6,6 +6,10 @@
         x:Class="Brainbrakers.Client.Desktop.MainWindow"
         Title="Brainbrakers.Client.Desktop">
 	<Grid>
-		<Button Command="{Binding ShowDebugMessage}" Content="Click me"/>
+		<Button Command="{Binding ShowDebugMessage}" Content="Click me"
+		        HorizontalAlignment="Center" VerticalAlignment="Center"
+		        Width="200" Height="50"
+		        />
+		<TextBlock Text="{Binding HelloWorldText}" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
 	</Grid>
 </Window>

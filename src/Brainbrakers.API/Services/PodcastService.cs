@@ -1,4 +1,5 @@
-﻿using Brainbrakers.API.Services.Interfaces;
+﻿using Brainbrakers.API.Repository.Interfaces;
+using Brainbrakers.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using podcast_api.Data;
 using podcast_api.Models;
@@ -8,11 +9,11 @@ namespace podcast_api.Services
 {
     public class PodcastService : IPodcastService
     {
-        private readonly IPodcastService _podcastService;
+        private readonly IPodcastRepository podcastRepository;
 
-        public PodcastService(IPodcastService podcastService)
+        public PodcastService(IPodcastRepository podcastRepository)
         {
-            _podcastService = podcastService;
+            podcastRepository = podcastRepository;
         }
 
         public string CreatePodcast(Podcast podcast)

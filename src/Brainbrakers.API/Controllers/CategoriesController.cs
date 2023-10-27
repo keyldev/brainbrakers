@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using podcast_api.Services;
 
@@ -8,22 +9,31 @@ namespace podcast_api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        CategoriesService categories = new CategoriesService();
-        [HttpGet("all")]
-        public IActionResult GetAllCategories()
+        private readonly ICategoriesService _categoriesService;
+        public CategoriesController(ICategoriesService categoriesService)
         {
-            var result = categories.GetAllCategories();
-            if (result != null) return Ok(result);
-            else return NotFound();
+            _categoriesService = categoriesService;
+        }
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllCategoriesAsync()
+        {
+            var categoriesList = await _categoriesService.GetAllCategoriesAsync();
+            if (categoriesList == null)
+            {
+                return NotFound();
+            }
+            else return Ok(categoriesList);
+        }
+        [HttpGet("keywords")]
+        public async Task<IActionResult> GetAllKeywordsAsync()
+        {
+            var keywordsList = await _categoriesService.GetAllKeywordsAsync();
+            if (keywordsList == null)
+            {
+                return NotFound();
+            }
+            else return Ok(keywordsList);
         }
 
-        [HttpGet("keywords")]
-        public IActionResult GetAllKeywords()
-        {
-            var result = categories.GetAllKeywords();
-            if (result != null) return Ok(result);
-            else return NotFound();
-        }
-        
     }
 }

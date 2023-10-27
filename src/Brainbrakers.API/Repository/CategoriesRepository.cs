@@ -1,5 +1,7 @@
 ﻿using Brainbrakers.API.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using podcast_api.Data;
+using podcast_api.Models;
 
 namespace Brainbrakers.API.Repository
 {
@@ -13,6 +15,16 @@ namespace Brainbrakers.API.Repository
 
         }
 
+        public async Task<List<Categories>> GetAllCategoriesAsync()
+        {
+            var categories = await _dbContext.Categories.ToListAsync();
+            return categories;
+        }
 
+        public async Task<List<Keywords>> GetAllKeywordsAsync()
+        {
+            var keywords = await _dbContext.Keywords.ToListAsync();
+            return keywords;
+        }
     }
 }

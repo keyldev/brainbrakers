@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using podcast_api.Models;
 using podcast_api.Services;
 
@@ -17,70 +18,76 @@ namespace podcast_api.Controllers
     [ApiController]
     public class PodcastsController : ControllerBase
     {
-        PodcastService podcasts = new PodcastService(); // change to middleware?
+        //PodcastService podcasts = new PodcastService(); // change to middleware?
 
-        [HttpGet("all")]
-        public List<Podcast> GetAllPodcasts()
+        private readonly IPodcastService _podcastService;
+        public PodcastsController(IPodcastService podcastService)
         {
-            return podcasts.GetAllPodcasts();
-        }
-
-        [HttpGet("{id}/subscribers")]
-        public Podcast GetSubs(Guid id)
-        {
-            return podcasts.GetPodcastInfo(id);
+            _podcastService = podcastService;
         }
 
-        [HttpGet("{id}/authors")]
-        public IActionResult GetAuthors(Guid id)
-        {
-            var result = podcasts.GetPodcastAuthors(id);
-            if (result != null) return Ok(result);
-            else return BadRequest();
-        }
+        //[HttpGet("all")]
+        //public List<Podcast> GetAllPodcasts()
+        //{
+        //    return podcasts.GetAllPodcasts();
+        //}
 
-        [HttpGet("find/{name}")]
-        public IActionResult FindPodcastByName(string name)
-        {
-            var result = podcasts.GetPodcastByName(name);
-            if (result != null) return Ok(result);
-            else return BadRequest();
-        }
+        //[HttpGet("{id}/subscribers")]
+        //public Podcast GetSubs(Guid id)
+        //{
+        //    return podcasts.GetPodcastInfo(id);
+        //}
 
-        [HttpPost("genres")]
-        public IActionResult UpdateGenres([FromBody] GenresModel genres)
-        {
-            var result = podcasts.Test(genres.id, genres.genres);
-            if (result) return Ok(result);
-            else return BadRequest();
-        }
+        //[HttpGet("{id}/authors")]
+        //public IActionResult GetAuthors(Guid id)
+        //{
+        //    var result = podcasts.GetPodcastAuthors(id);
+        //    if (result != null) return Ok(result);
+        //    else return BadRequest();
+        //}
 
-        [HttpGet("sort")]
-        public IActionResult GetNewPodcasts()
-        {
-            var result = podcasts.GetNewPodcasts();
-            if (result != null && result.Any()) return Ok(result);
-            else return NotFound();
-        }
-        public class GenresModel
-        {
-            public Guid id { get; set; }
-            public String genres { get; set; }
-            
-        }
+        //[HttpGet("find/{name}")]
+        //public IActionResult FindPodcastByName(string name)
+        //{
+        //    var result = podcasts.GetPodcastByName(name);
+        //    if (result != null) return Ok(result);
+        //    else return BadRequest();
+        //}
 
-        // DELETE api/<PodcastsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //[HttpPost("genres")]
+        //public IActionResult UpdateGenres([FromBody] GenresModel genres)
+        //{
+        //    var result = podcasts.Test(genres.id, genres.genres);
+        //    if (result) return Ok(result);
+        //    else return BadRequest();
+        //}
 
-        [HttpGet("{id}/audio")]
-        public IActionResult GetEpisodeAudio(Guid id)
-        {
-            var filePath = $"{AppDomain.CurrentDomain.BaseDirectory}/episodes/{id}/1.mp3";
-            // NOTE: because you're serving media files, you should specify the MIME type
-            return PhysicalFile(filePath, "audio/mpeg");
-        }
+        //[HttpGet("sort")]
+        //public IActionResult GetNewPodcasts()
+        //{
+        //    var result = podcasts.GetNewPodcasts();
+        //    if (result != null && result.Any()) return Ok(result);
+        //    else return NotFound();
+        //}
+        //public class GenresModel
+        //{
+        //    public Guid id { get; set; }
+        //    public String genres { get; set; }
+
+        //}
+
+        //// DELETE api/<PodcastsController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
+
+        //[HttpGet("{id}/audio")]
+        //public IActionResult GetEpisodeAudio(Guid id)
+        //{
+        //    var filePath = $"{AppDomain.CurrentDomain.BaseDirectory}/episodes/{id}/1.mp3";
+        //    // NOTE: because you're serving media files, you should specify the MIME type
+        //    return PhysicalFile(filePath, "audio/mpeg");
+        //}
     }
 }

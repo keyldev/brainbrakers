@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Brainbrakers.API.Services.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using podcast_api.Services;
@@ -9,23 +10,28 @@ namespace podcast_api.Controllers
     [ApiController]
     public class SubscriptionsController : ControllerBase
     {
-
-        SubscriptionService subs = new SubscriptionService();
-
-        // authentication
-        [HttpGet("{id}/all")]
-        public IActionResult GetUserSubscriptions(Guid id) // здесь через JWT UserID
+        private readonly ISubscriptionService _subsService;
+        public SubscriptionsController(ISubscriptionService subsService)
         {
-            var result = subs.GetSubscribedPodcasts(id);
-
-            return Ok(result);
+            _subsService = subsService;
         }
 
-        [HttpDelete("unsubscribe/all")]
-        public void UnsubscribeAllPodcasts()
-        {
+        //SubscriptionService subs = new SubscriptionService();
 
-        }
+        //// authentication
+        //[HttpGet("{id}/all")]
+        //public IActionResult GetUserSubscriptions(Guid id) // здесь через JWT UserID
+        //{
+        //    var result = subs.GetSubscribedPodcasts(id);
+
+        //    return Ok(result);
+        //}
+
+        //[HttpDelete("unsubscribe/all")]
+        //public void UnsubscribeAllPodcasts()
+        //{
+
+        //}
 
     }
 }
