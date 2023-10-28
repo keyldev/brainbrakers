@@ -9,13 +9,34 @@ namespace podcast_api.Services
 {
     public class PodcastService : IPodcastService
     {
-        private readonly IPodcastRepository podcastRepository;
+        private readonly IPodcastRepository _podcastRepository;
 
         public PodcastService(IPodcastRepository podcastRepository)
         {
-            podcastRepository = podcastRepository;
+            _podcastRepository = podcastRepository;
+        }
+        public async Task<Guid> CreatePodcastAsync(Podcast podcast)
+        {
+            var podcastDto = await _podcastRepository.CreatePodcastAsync(podcast);
+            if (podcastDto != null)
+                return podcastDto.Id;
+            else return Guid.Empty;
+
         }
 
+        public async Task<Podcast> GetPodcastAsync(Guid id)
+        {
+            var podcastDto = await _podcastRepository.GetPodcastAsync(id);
+
+            return podcastDto;
+        }
+
+        public async Task<List<Episode>> GetPodcastEpisodesAsync(Guid id)
+        {
+            var episodes = await _podcastRepository.GetEpisodesAsync(id);
+
+            return episodes;
+        }
         public string CreatePodcast(Podcast podcast)
         {
             //using (ApplicationContext db = new ApplicationContext())
@@ -176,5 +197,7 @@ namespace podcast_api.Services
             //return podcasts;
             return null;
         }
+
+
     }
 }
