@@ -30,21 +30,40 @@ namespace podcast_api.Controllers
             _podcastService = podcastService;
         }
 
+        [HttpGet("{id}/info")]
+        public async Task<IActionResult> GetPodcastAsync(Guid id)
+        {
+            var podcastDto = await _podcastService.GetPodcastAsync(id);
+            if (podcastDto == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(podcastDto);
+            }
+        }
+        [HttpGet("{id}/episodes")]
+        public async Task<IActionResult> GetPodcastEpisodesAsync(Guid id)
+        {
+            var episodes = await _podcastService.GetPodcastEpisodesAsync(id);
+            if (episodes == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(episodes);
+            }
 
-        //    [HttpGet("{id}/info")]
-        //    public IActionResult GetPodcastInfoByID(Guid id)
-        //    {
-        //        var result = podcastService.GetPodcastInfo(id);
-        //        if (result == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            return Ok(result);
-        //        }
-        //    }
-
+        }
+        [HttpPost("create")]
+        public async Task<IActionResult> CreatePodcastAsync([FromBody] Podcast podcast)
+        {
+            var creationResult = await _podcastService.CreatePodcastAsync(podcast);
+            if (!creationResult.Equals(Guid.Empty)) return Ok(creationResult);
+            else return BadRequest();
+        }
         //    [HttpGet("trending")]
         //    public IActionResult GetTrendingAuthors()
         //    {
@@ -54,13 +73,6 @@ namespace podcast_api.Controllers
         //        else return NotFound();
         //    }
 
-        //    [HttpGet("{id}/episodes")]
-        //    public IActionResult GetEpisodes(Guid id) // guid podcast'a
-        //    {
-        //        var result = podcastService.GetEpisodesByPodcastId(id);
-        //        if (result != null) return Ok(result);
-        //        else return NotFound();
-        //    }
 
         //    [HttpGet("{id}/authors")]
         //    public IActionResult GetAuthors(Guid id)
@@ -87,13 +99,6 @@ namespace podcast_api.Controllers
         //    }
 
 
-        //    [HttpPost("create")]
-        //    public IActionResult CreatePodcast([FromBody] Podcast podcast)
-        //    {
-        //        var result = podcastService.CreatePodcast(podcast);
-        //        if (result != null) return Ok(result);
-        //        else return Forbid();
-        //    }
 
         //    [HttpPut("update")]
         //    public IActionResult Put([FromBody] Podcast podcast)
@@ -101,12 +106,6 @@ namespace podcast_api.Controllers
         //        var result = podcastService.UpdatePodcast(podcast);
         //        if (result) return Ok();
         //        else return Conflict();
-        //    }
-
-        //    [HttpDelete("{id}/delete")]
-        //    public string Delete(int id)
-        //    {
-        //        return "Podcast with id: " + id + " was successfully deleted";
         //    }
     }
 }
