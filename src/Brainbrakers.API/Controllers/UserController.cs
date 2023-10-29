@@ -29,15 +29,17 @@ namespace podcast_api.Controllers
         }
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("{id}")]
-        public IActionResult GetUserByID(Guid id)
+        public async Task<IActionResult> GetUserAsync(Guid id)
         {
-            //var result = userService.GetUserById(id);
-            //if (result != null) return Ok(result);
-            //else return NotFound(new
-            //{
-            //    message = "An error occurred while found info"
-            //});
-            return Ok();
+            var userDto = _userService.GetUserAsync(id);
+            if(userDto == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(userDto);
+            }
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
